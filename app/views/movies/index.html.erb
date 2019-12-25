@@ -1,5 +1,14 @@
-<ul>
 <% @movies.each do |movie| %>
-  <li><%= movie %></li>
+  <section class="movie">
+    <div class="summary">
+      <h2><%= link_to movie.title, movie %></h2>
+      <h3><%= total_gross(movie) %></h3>
+      <p>
+        <%= truncate(movie.description, length: 150, separator: " ") %>
+      </p>
+    </div>
+  </section>
 <% end %>
-</ul>
+<section class="admin">
+  <%= link_to "Add a New Movie", :new_movie, class: "button" %>
+</section>

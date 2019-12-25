@@ -22,3 +22,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Outstanding Questions
+
+* How do I access custom helper methods from the Rails console?
