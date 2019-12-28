@@ -20,6 +20,7 @@ $secondary-link-color: $light-blue;
 $border-color: $light-gray;
 $error-color: $red;
 $error-background-color: $light-yellow;
+$error-border-color: $red;
 $sold-out-color: $yellow;
 $box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .09);
 
@@ -486,7 +487,7 @@ form:not([class="button_to"]) {
       color: $error-color;
     }
     input, textarea, select {
-      background: $error-background-color;
+      border-color: $error-border-color;
     }
   }
 }
@@ -505,6 +506,10 @@ form:not([class="button_to"]) {
 
   &.alert {
 		@extend .alert-danger;
+  }
+
+  &.danger {
+    background-color: #FFA715;
   }
 }
 
