@@ -174,3 +174,14 @@ Movie.create!([
       image_file_name: "wonder-woman.png"
   }
 ])
+
+movie = Movie.find_by(title: "Captain Marvel")
+
+movie.reviews.create!(name: "Larry", stars: 5, comment: "Captain Marvel is Awesome!")
+movie.reviews.create!(name: "Daisy", stars: 4, comment: "She's my new hero!")
+movie.reviews.create!(name: "Moe", stars: 3, comment: "Spilled my popcorn!")
+
+movie = Movie.find_by(title: "Superman")
+
+movie.reviews.create!(name: "Larry", stars: 2, comment: "Shemp ate all my candy. :(")
+movie.reviews.create!(name: "Shemp", stars: 5, comment: "The candy was great! The movie was good too.")
