@@ -1,18 +1,19 @@
 class MoviesController < ApplicationController
+
+  before_action :set_movie, only: [:show, :edit, :update]
+
   def index
     @movies = Movie.released
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    @review = @movie.reviews.new
   end
 
   def edit
-    @movie = Movie.find(params[:id])
   end
 
   def update
-    @movie = Movie.find(params[:id])
     if @movie.update(movie_params)
       redirect_to @movie, notice: "Movie successfully updated!"
     else
@@ -40,6 +41,10 @@ class MoviesController < ApplicationController
   end
 
   private
+
+  def set_movie
+    @movie = Movie.find(params[:id])
+  end
 
   def movie_params
     params.require(:movie).
