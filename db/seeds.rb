@@ -6,6 +6,34 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ User.create({
+  name: "Moe",
+  email: "moe@stooges.com",
+  password: "secret",
+  password_confirmation: "secret"
+})
+
+User.create({
+  name: "Larry",
+  email: "larry@stooges.com",
+  password: "secret",
+  password_confirmation: "secret"
+})
+
+User.create({
+  name: "Curly",
+  email: "curly@stooges.com",
+  password: "secret",
+  password_confirmation: "secret"
+})
+
+User.create({
+  name: "Shemp",
+  email: "shemp@stooges.com",
+  password: "secret",
+  password_confirmation: "secret"
+})
+
 Movie.create!([
   {
     title: 'Avengers: Endgame',
