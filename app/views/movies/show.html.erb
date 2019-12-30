@@ -11,6 +11,7 @@
       <div>
         <%= link_to "Write a Review", new_movie_review_path(@movie), class: "review" %>
       </div>
+      <%= render "shared/stars", percent: @movie.average_stars_as_percent %>
       <%= link_to "Reviews", movie_reviews_path(@movie) %>
     </div>
     <p>
