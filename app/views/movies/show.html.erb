@@ -33,8 +33,10 @@
     </table>
   </div>
 </section>
-<section class="admin">
-  <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
-  <%= link_to "Delete", @movie, class: "button", method: :delete, data: {confirm: "Really?"} %>
-</section>
+<% if current_user_admin? %>
+  <section class="admin">
+    <%= link_to "Edit", edit_movie_path(@movie), class: "button" %>
+    <%= link_to "Delete", @movie, class: "button", method: :delete, data: {confirm: "Really?"} %>
+  </section>
+<% end %>
 <%= render "reviews/form", movie: @movie, review: @review %>

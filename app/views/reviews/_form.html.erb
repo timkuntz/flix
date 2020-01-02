@@ -1,8 +1,8 @@
 <%= form_with(model: [movie, review], local: true) do |f| %>
   <%= render "shared/errors", object: review %>
 
-  <%= f.label :name %>
-  <%= f.text_field :name, auto_focus: true %>
+  <%= f.label :comment %>
+  <%= f.text_area :comment, autofocus: true, placeholder: "What did you think?" %>
 
   <%= f.label :stars %>
   <% Review::STARS.each do |star| %>
@@ -12,8 +12,5 @@
     </span>
   <% end %>
 
-  <%= f.label :comment %>
-  <%= f.text_area :comment, placeholder: "What did you think?" %>
-  
   <%= f.submit "Post Review" %>
 <% end %>

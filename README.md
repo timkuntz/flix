@@ -26,3 +26,11 @@ Things you may want to cover:
 ## Outstanding Questions
 
 * How do I access custom helper methods from the Rails console?
+
+## Example Users
+
+timkuntz+larry@gmail.com - larrystooge
+timkuntz+moe@gmail.com - moestooges
+timkuntz+curly@gmail.com - curlystooges
+timkuntz+shemp@gmail.com - shempstooges
+
