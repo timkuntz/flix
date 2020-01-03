@@ -5,7 +5,7 @@ class MoviesController < ApplicationController
   before_action :require_admin, except: [:index, :show]
 
   def index
-    @movies = Movie.released
+    @movies = Movie.send(movies_filter)
   end
 
   def show
@@ -57,5 +57,13 @@ class MoviesController < ApplicationController
     params.require(:movie).
       permit(:title, :description, :rating, :total_gross, :released_on, :director,
              :duration, :image_file_name, genre_ids: [])
+  end
+
+  def movies_filter
+    if params[:filter].in? Movie::FILTERS
+      params[:filter]
+    else
+      :released
+    end
   end
 end
