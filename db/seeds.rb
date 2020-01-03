@@ -19,7 +19,7 @@
   Genre.create(name: name)
 end
 
-User.create({
+moe = User.create({
   name: "Moe",
   email: "timkuntz+moe@gmail.com",
   password: "secret",
@@ -27,7 +27,7 @@ User.create({
   username: "moe"
 })
 
-User.create({
+larry = User.create({
   name: "Larry",
   email: "timkuntz+larry@gmail.com",
   password: "secret",
@@ -35,7 +35,7 @@ User.create({
   username: "larry"
 })
 
-User.create({
+curly = User.create({
   name: "Curly",
   email: "timkuntz+curly@gmail.com",
   password: "secret",
@@ -43,7 +43,7 @@ User.create({
   username: "curly"
 })
 
-User.create({
+shemp = User.create({
   name: "Shemp",
   email: "timkuntz+shemp@gmail.com",
   password: "secret",
@@ -231,11 +231,11 @@ Movie.create!([
 
 movie = Movie.find_by(title: "Captain Marvel")
 
-movie.reviews.create!(name: "Larry", stars: 5, comment: "Captain Marvel is Awesome!")
-movie.reviews.create!(name: "Daisy", stars: 4, comment: "She's my new hero!")
-movie.reviews.create!(name: "Moe", stars: 3, comment: "Spilled my popcorn!")
+movie.reviews.create!(user: larry, stars: 5, comment: "Captain Marvel is Awesome!")
+movie.reviews.create!(user: curly, stars: 4, comment: "She's my new hero!")
+movie.reviews.create!(user: moe, stars: 3, comment: "Spilled my popcorn!")
 
 movie = Movie.find_by(title: "Superman")
 
-movie.reviews.create!(name: "Larry", stars: 2, comment: "Shemp ate all my candy. :(")
-movie.reviews.create!(name: "Shemp", stars: 5, comment: "The candy was great! The movie was good too.")
+movie.reviews.create!(user: larry, stars: 2, comment: "Shemp ate all my candy. :(")
+movie.reviews.create!(user: shemp, stars: 5, comment: "The candy was great! The movie was good too.")
