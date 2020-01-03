@@ -1,6 +1,14 @@
 <section class="movie-details">
   <div class="image">
     <%= image_tag @movie.image_file_name %>
+    <% if current_user %>
+      <div class="faves">
+        <%= fav_or_unfave_button(@movie, @favorite) %>
+        <div class="count">
+          <%= @fans.size %>
+        </div>
+      </div>
+    <% end %>
   </div>
   <div class="details">
     <h1><%= @movie.title %></h1>
@@ -32,6 +40,29 @@
       </tr>
     </table>
   </div>
+  <aside class="fans">
+    <% if @genres.present? %>
+      <h4>Genres</h4>
+      <ul>
+        <% @genres.each do |g| %>
+          <li><%= g.name %></li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% if @fans.present? %>
+      <h4>Fans</h4>
+      <ul>
+        <% @fans.each do |user| %>
+          <li>
+            <div>
+              <%= profile_image(user, 35) %>
+              <%= link_to user.username, user %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </aside>
 </section>
 <% if current_user_admin? %>
   <section class="admin">

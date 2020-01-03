@@ -200,6 +200,12 @@ section.movie-details {
     }
   }
 
+  .fans img {
+    margin-top: 0.5rem;
+    width: 35px;
+    box-shadow: $box-shadow;
+  }
+
   .faves {
     @extend .input-group;
     margin-top: 1rem;

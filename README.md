@@ -1,3 +1,10 @@
+# TODO
+
+* Genres (38)
+
+- Allow the admin to CRUD genres
+- Create a Genre show to list movies associated with a genre
+
 # README
 
 This README would normally document whatever steps are necessary to get the
