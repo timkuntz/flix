@@ -21,30 +21,43 @@ end
 
 User.create({
   name: "Moe",
-  email: "moe@stooges.com",
+  email: "timkuntz+moe@gmail.com",
   password: "secret",
-  password_confirmation: "secret"
+  password_confirmation: "secret",
+  username: "moe"
 })
 
 User.create({
   name: "Larry",
-  email: "larry@stooges.com",
+  email: "timkuntz+larry@gmail.com",
   password: "secret",
-  password_confirmation: "secret"
+  password_confirmation: "secret",
+  username: "larry"
 })
 
 User.create({
   name: "Curly",
-  email: "curly@stooges.com",
+  email: "timkuntz+curly@gmail.com",
   password: "secret",
-  password_confirmation: "secret"
+  password_confirmation: "secret",
+  username: "curly"
 })
 
 User.create({
   name: "Shemp",
-  email: "shemp@stooges.com",
+  email: "timkuntz+shemp@gmail.com",
   password: "secret",
-  password_confirmation: "secret"
+  password_confirmation: "secret",
+  username: "shemp"
+})
+
+User.create({
+  name: "Tim Kuntz",
+  email: "timkuntz@gmail.com",
+  password: "secret",
+  password_confirmation: "secret",
+  username: "quigkin",
+  admin: true
 })
 
 Movie.create!([
