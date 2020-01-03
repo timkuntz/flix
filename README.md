@@ -5,6 +5,12 @@
 - Allow the admin to CRUD genres
 - Create a Genre show to list movies associated with a genre
 
+* Callbacks and Slugs
+
+https://online.pragmaticstudio.com/courses/rails/steps/94
+
+* 
+
 # README
 
 This README would normally document whatever steps are necessary to get the

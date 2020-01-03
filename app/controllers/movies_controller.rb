@@ -42,15 +42,15 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    redirect_to movies_url, danger: "I'm sorry, Dave, I'm afraid I can't do that!"
-    # Movie.find(params[:id]).destroy
-    # redirect_to movies_url, alert: "Movie successfully deleted!"
+    # redirect_to movies_url, danger: "I'm sorry, Dave, I'm afraid I can't do that!"
+    @movie.destroy
+    redirect_to movies_url, alert: "Movie successfully deleted!"
   end
 
   private
 
   def set_movie
-    @movie = Movie.find(params[:id])
+    @movie = Movie.find_by!(slug: params[:id])
   end
 
   def movie_params
