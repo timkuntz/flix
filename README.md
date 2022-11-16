@@ -42,8 +42,26 @@ Things you may want to cover:
 
 ## Example Users
 
+```
 timkuntz+larry@gmail.com - larrystooge
 timkuntz+moe@gmail.com - moestooges
 timkuntz+curly@gmail.com - curlystooges
 timkuntz+shemp@gmail.com - shempstooges
+```
 
+## Domain Model
+
+```mermaid
+classDiagram
+    Movie *-- Review
+    Movie *-- Favorite
+    Movie *-- Characterization
+    Movie o-- Genre
+    Movie o-- Fan
+
+    User o-- Fan
+    User *-- Favorite
+    User *-- Review
+
+    Genre *-- Characterization
+```
