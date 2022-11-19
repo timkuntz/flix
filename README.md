@@ -53,15 +53,20 @@ timkuntz+shemp@gmail.com - shempstooges
 
 ```mermaid
 classDiagram
-    Movie *-- Review
-    Movie *-- Favorite
+    Movie *-- "0..*" Review: has many
+    Movie *-- "0..*" Favorite: fans
     Movie *-- Characterization
-    Movie o-- Genre
-    Movie o-- Fan
+    Movie "1..*" o-- "1..*" Genre
 
-    User o-- Fan
-    User *-- Favorite
-    User *-- Review
+    User *-- "0..*" Favorite: fan
+    User *-- "0..*" Review: writes
 
     Genre *-- Characterization
+    
+    link Characterization "https://github.com/timkuntz/flix/blob/master/app/models/characterization.rb" _blank
+    link Favorite "https://github.com/timkuntz/flix/blob/master/app/models/favorite.rb" _blank
+    link Genre "https://github.com/timkuntz/flix/blob/master/app/models/genre.rb" _blank
+    link Movie "https://github.com/timkuntz/flix/blob/master/app/models/movie.rb" _blank
+    link Review "https://github.com/timkuntz/flix/blob/master/app/models/review.rb" _blank
+    link User "https://github.com/timkuntz/flix/blob/master/app/models/user.rb" _blank
 ```
