@@ -1,7 +1,7 @@
 class Movie < ApplicationRecord
 
   RATINGS = %w(G PG PG-13 R NC-17)
-  FILTERS = %w(released, upcoming, recent, hits, flops)
+  FILTERS = %w(released upcoming recent hits flops)
 
   before_save :set_slug
 
@@ -29,7 +29,7 @@ class Movie < ApplicationRecord
   scope :recent, ->(max = 3) { released.limit(max) }
 
   scope :hits, -> { released.where("total_gross >= 325000000").order(total_gross: :desc) }
-  scope :flops, -> { released.where("total_gross < 22500000").order(total_gross: :asc) }
+  scope :flops, -> { released.where("total_gross < 325000000").order(total_gross: :asc) }
 
   def flop?
     total_gross && total_gross < 325_000_000 && (reviews.size < 50 || average_stars < 4)
