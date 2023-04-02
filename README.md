@@ -87,8 +87,31 @@ Things you may want to cover:
 
 ## Example Users
 
+```
 timkuntz+larry@gmail.com - larrystooge
 timkuntz+moe@gmail.com - moestooges
 timkuntz+curly@gmail.com - curlystooges
 timkuntz+shemp@gmail.com - shempstooges
+```
 
+## Domain Model
+
+```mermaid
+classDiagram
+    Movie *-- "0..*" Review: has many
+    Movie *-- "0..*" Favorite: fans
+    Movie *-- Characterization
+    Movie "1..*" o-- "1..*" Genre
+
+    User *-- "0..*" Favorite: fan
+    User *-- "0..*" Review: writes
+
+    Genre *-- Characterization
+    
+    link Characterization "https://github.com/timkuntz/flix/blob/master/app/models/characterization.rb" _blank
+    link Favorite "https://github.com/timkuntz/flix/blob/master/app/models/favorite.rb" _blank
+    link Genre "https://github.com/timkuntz/flix/blob/master/app/models/genre.rb" _blank
+    link Movie "https://github.com/timkuntz/flix/blob/master/app/models/movie.rb" _blank
+    link Review "https://github.com/timkuntz/flix/blob/master/app/models/review.rb" _blank
+    link User "https://github.com/timkuntz/flix/blob/master/app/models/user.rb" _blank
+```
