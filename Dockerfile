@@ -1,4 +1,4 @@
-FROM ruby:2.6.5
+FROM ruby:2.7.6
 
 # https-based sources allows working with ssl sources
 # libgnutls30 fixes a certificate expiration issue

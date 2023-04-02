@@ -25,33 +25,39 @@ Things you may want to cover:
 
 * Configuration
 
-* Database connect
-
-    # connect to the database
-    docker-compose run --rm database psql -U postgres -h database
-
-* Database creation
-
-    docker-compose run --rm web bin/rails db:create
-
-* Database initialization
-
-    docker-compose run --rm web bin/rails db:create
-
-    # or if web is already running
-    docker-compose exec web bin/rails db:migrate
-
-    docker-compose exec web bin/rails db:seed
-
-* How to run the test suite
-
-    docker-compose exec web bin/rails test
-
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
 * ...
+
+## Local Development
+
+* Copy the example environment files.
+
+    cp .env/development/database.example .env/development/database
+    cp .env/development/web.example .env/development/web
+
+* Build and start the services
+
+    docker compose up
+
+* Database initialization; create, migrate, and seed
+
+    docker compose run --rm web bin/rails db:create db:migrate db:seed
+
+* Run tests
+
+    docker compose run --rm web bin/rails db:test:prepare test
+
+* (Optional) Run a rails console
+
+    docker compose run --rm web bin/rails console
+
+* (Optional) Run a database console
+
+    docker compose run --rm database psql -U postgres -h database flix_development
+
 
 ## Outstanding Questions
 
@@ -61,7 +67,6 @@ Things you may want to cover:
 
     ➜  flix git:(dockerize) ✗ docker-compose run --rm web bin/rails db:create
     Creating flix_web_run ... done
-    ./docker-entrypoint.sh: 5: ./docker-entrypoint.sh: [-f: not found
     error Couldn't find an integrity file
     error Found 1 errors.
 
